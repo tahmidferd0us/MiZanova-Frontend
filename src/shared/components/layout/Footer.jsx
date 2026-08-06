@@ -19,10 +19,10 @@ const Footer = () => (
       {columns.map(({ title, links }) => (
         <nav key={title} aria-label={title} className="flex flex-col gap-3">
           <h3 className="text-sm font-semibold text-content">{title}</h3>
-          <ul className="flex flex-col gap-2">
+          <ul className="flex flex-col">
             {links.map(({ label, to }) => (
               <li key={label}>
-                <Link to={to} className="text-sm text-content-muted transition-colors hover:text-brand-600">
+                <Link to={to} className="inline-flex min-h-11 items-center text-sm text-content-muted transition-colors hover:text-brand-600 sm:min-h-9">
                   {label}
                 </Link>
               </li>
