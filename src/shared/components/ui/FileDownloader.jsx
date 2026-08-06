@@ -1,20 +1,8 @@
 import { useState } from 'react';
 import { axiosClient } from '@app/api/axiosClient';
 import { useToast } from '@shared/hooks/useToast';
+import { downloadBlob, fileNameFromHeaders } from '@shared/utils/file';
 import Button from './Button';
-
-export const downloadBlob = (blob, fileName) => {
-  const url = URL.createObjectURL(blob);
-  const link = Object.assign(document.createElement('a'), { href: url, download: fileName });
-
-  document.body.appendChild(link);
-  link.click();
-  link.remove();
-  URL.revokeObjectURL(url);
-};
-
-const nameFromHeaders = (headers, fallback) =>
-  headers?.['content-disposition']?.match(/filename\*?=(?:UTF-8'')?"?([^";]+)"?/i)?.[1] ?? fallback;
 
 const FileDownloader = ({
   url,
@@ -35,7 +23,7 @@ const FileDownloader = ({
 
     try {
       const response = await axiosClient({ url, method: 'GET', params, responseType: 'blob' });
-      downloadBlob(response.data, decodeURIComponent(nameFromHeaders(response.headers, fileName)));
+      downloadBlob(response.data, fileNameFromHeaders(response.headers, fileName));
       onDownloaded?.();
     } catch (error) {
       toast.error('Download failed', { description: error.response?.data?.message ?? error.message });
