@@ -58,11 +58,11 @@ const Navbar = () => {
             </>
           ) : (
             <>
-              <Button as="a" variant="ghost" size="sm" onClick={() => null} className="p-0">
-                <Link to={ROUTES.login} className="px-3 py-2">
+              <Link to={ROUTES.login}>
+                <Button variant="ghost" size="sm">
                   Log in
-                </Link>
-              </Button>
+                </Button>
+              </Link>
               <Link to={ROUTES.register}>
                 <Button size="sm">Get started</Button>
               </Link>
