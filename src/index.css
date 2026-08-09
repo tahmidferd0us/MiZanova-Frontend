@@ -25,6 +25,9 @@
 
   --color-surface: oklch(1 0 0);
   --color-surface-muted: oklch(0.98 0.004 262);
+  --color-canvas: #f7fafc;
+  --color-cta: #2b6cb0;
+  --color-ink: #0f1b2d;
   --color-border-subtle: oklch(0.92 0.008 262);
   --color-content: oklch(0.22 0.03 265);
   --color-content-muted: oklch(0.52 0.02 262);
