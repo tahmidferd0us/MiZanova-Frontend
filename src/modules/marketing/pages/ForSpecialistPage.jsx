@@ -1,5 +1,17 @@
-import PagePlaceholder from '../components/PagePlaceholder';
+import AcceptanceSection from '../components/forSpecialist/AcceptanceSection';
+import EngagementSection from '../components/forSpecialist/EngagementSection';
+import ForSpecialistHero from '../components/forSpecialist/ForSpecialistHero';
+import SpecialistApplySection from '../components/forSpecialist/SpecialistApplySection';
+import SpecialistRoleSection from '../components/forSpecialist/SpecialistRoleSection';
 
-const ForSpecialistPage = () => <PagePlaceholder eyebrow="For Specialist" title="Validate strategies and stay in the loop." description="This page is a placeholder. The specialist-facing content and layout will be designed next." />;
+const ForSpecialistPage = () => (
+  <>
+    <ForSpecialistHero />
+    <SpecialistRoleSection />
+    <EngagementSection />
+    <AcceptanceSection />
+    <SpecialistApplySection />
+  </>
+);
 
 export default ForSpecialistPage;

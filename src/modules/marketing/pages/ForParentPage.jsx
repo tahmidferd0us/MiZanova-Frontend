@@ -1,5 +1,19 @@
-import PagePlaceholder from '../components/PagePlaceholder';
+import ForParentHero from '../components/forParent/ForParentHero';
+import ParentDataSection from '../components/forParent/ParentDataSection';
+import ParentFaqSection from '../components/forParent/ParentFaqSection';
+import ParentIntroSection from '../components/forParent/ParentIntroSection';
+import ParentPlansSection from '../components/forParent/ParentPlansSection';
+import ParentSupportSection from '../components/forParent/ParentSupportSection';
 
-const ForParentPage = () => <PagePlaceholder eyebrow="For Parent" title="Understand and support your child at home." description="This page is a placeholder. The parent-facing content and layout will be designed next." />;
+const ForParentPage = () => (
+  <>
+    <ForParentHero />
+    <ParentIntroSection />
+    <ParentPlansSection />
+    <ParentSupportSection />
+    <ParentDataSection />
+    <ParentFaqSection />
+  </>
+);
 
 export default ForParentPage;

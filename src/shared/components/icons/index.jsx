@@ -116,6 +116,111 @@ export const SpecialistIcon = (props) => (
   </Outline>
 );
 
+export const BookIcon = (props) => (
+  <Outline {...props}>
+    <path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H10a2 2 0 0 1 2 2v13a2 2 0 0 0-2-2H5.5A1.5 1.5 0 0 1 4 15.5v-10Z" />
+    <path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H14a2 2 0 0 0-2 2v13a2 2 0 0 1 2-2h4.5a1.5 1.5 0 0 0 1.5-1.5v-10Z" />
+  </Outline>
+);
+
+export const LightbulbIcon = (props) => (
+  <Outline {...props}>
+    <path d="M9.5 17.5h5" />
+    <path d="M10 20.5h4" />
+    <path d="M12 3.5a5.5 5.5 0 0 0-3.2 9.98c.5.36.7.9.7 1.44v.58h5v-.58c0-.54.2-1.08.7-1.44A5.5 5.5 0 0 0 12 3.5Z" />
+  </Outline>
+);
+
+export const MapPinIcon = (props) => (
+  <Outline {...props}>
+    <path d="M12 21s6.5-5.5 6.5-10.5a6.5 6.5 0 0 0-13 0C5.5 15.5 12 21 12 21Z" />
+    <circle cx="12" cy="10.5" r="2.5" />
+  </Outline>
+);
+
+export const FileIcon = (props) => (
+  <Outline {...props}>
+    <path d="M13.5 3.5H7A1.5 1.5 0 0 0 5.5 5v14A1.5 1.5 0 0 0 7 20.5h10a1.5 1.5 0 0 0 1.5-1.5V8.5l-5-5Z" />
+    <path d="M13.5 3.5v5h5" />
+  </Outline>
+);
+
+export const RefreshIcon = (props) => (
+  <Outline {...props}>
+    <path d="M20 12a8 8 0 0 1-13.7 5.6" />
+    <path d="M4 12a8 8 0 0 1 13.7-5.6" />
+    <path d="M17.5 3v3.5H14" />
+    <path d="M6.5 21v-3.5H10" />
+  </Outline>
+);
+
+export const SearchIcon = (props) => (
+  <Outline {...props}>
+    <circle cx="11" cy="11" r="6.5" />
+    <path d="m16 16 4 4" />
+  </Outline>
+);
+
+export const UserIcon = (props) => (
+  <Outline {...props}>
+    <circle cx="12" cy="8.5" r="3.5" />
+    <path d="M5 20a7 7 0 0 1 14 0" />
+  </Outline>
+);
+
+export const BadgeIcon = (props) => (
+  <Outline {...props}>
+    <rect x="4" y="5.5" width="16" height="13" rx="2" />
+    <circle cx="9" cy="11" r="2" />
+    <path d="M6 16a3.2 3.2 0 0 1 6 0" />
+    <path d="M14.5 10.5H18M14.5 14H18" />
+  </Outline>
+);
+
+export const AccessibilityIcon = (props) => (
+  <Outline {...props}>
+    <circle cx="12" cy="4.5" r="1.5" />
+    <path d="M5.5 8.5 12 10l6.5-1.5" />
+    <path d="M12 10v4" />
+    <path d="m9 20 3-6 3 6" />
+  </Outline>
+);
+
+export const ChatIcon = (props) => (
+  <Outline {...props}>
+    <path d="M20 12.5c0 3.6-3.6 6.5-8 6.5a9.6 9.6 0 0 1-2.6-.35L5 21l1.1-3.3A6.2 6.2 0 0 1 4 12.5C4 8.9 7.6 6 12 6s8 2.9 8 6.5Z" />
+  </Outline>
+);
+
+export const BellIcon = (props) => (
+  <Outline {...props}>
+    <path d="M18 16V11a6 6 0 0 0-12 0v5l-1.5 2.5h15L18 16Z" />
+    <path d="M10 19.5a2 2 0 0 0 4 0" />
+  </Outline>
+);
+
+export const ClipboardIcon = (props) => (
+  <Outline {...props}>
+    <rect x="5.5" y="5" width="13" height="15" rx="2" />
+    <path d="M9 5V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1" />
+    <path d="M9 11h6M9 15h4" />
+  </Outline>
+);
+
+export const ChevronDownIcon = (props) => (
+  <Outline {...props}>
+    <path d="m6 9.5 6 6 6-6" />
+  </Outline>
+);
+
+export const UploadIcon = (props) => (
+  <Outline {...props}>
+    <path d="M12 15.5V4" />
+    <path d="m7.5 8.5 4.5-4.5 4.5 4.5" />
+    <path d="M4.5 15.5v3a1.5 1.5 0 0 0 1.5 1.5h12a1.5 1.5 0 0 0 1.5-1.5v-3" />
+  </Outline>
+);
+
 export const ShieldIcon = (props) => (
   <Outline {...props}>
     <path d="M12 3.2 5 6v5.5c0 4.2 2.9 7.6 7 9.3 4.1-1.7 7-5.1 7-9.3V6l-7-2.8Z" />

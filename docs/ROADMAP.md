@@ -69,7 +69,15 @@ Status legend: `Done` · `In progress` · `Not started`
 
 **Frontend** — React + Vite + Tailwind v4 + Redux Toolkit/RTK Query; shared UI kit (Button, Input, NumberInput, Select, Modal, ConfirmModal, Table + Pagination, FileUploader, FileDownloader, Toast, Badge, Card, Spinner); marketing home page built to the Figma `Landing Page` frame (hero, 3 feature cards, CTA band, 5-column footer); placeholder pages for `/for-school`, `/for-parent`, `/for-specialist`, `/pricing`, `/resources`, `/about`; protected `/dashboard` used as the component reference.
 
-Marketing `/for-school` built to Figma frame `P-002 For Schools` (node `264-1861`): hero with a dashboard mockup, trust strip, "Why schools choose", pricing tiers, and a pilot-request form. **Caveat:** the pilot form validates client-side but has no backend endpoint — submitting only raises a toast. `/for-parent`, `/for-specialist`, `/pricing`, `/resources`, `/about` are still placeholders (frames `P-003`, `P-004`, `P-005`, `P-006`, `P-007` exist in Figma).
+Marketing pages built to Figma:
+
+| Route | Frame | Node | Sections |
+|---|---|---|---|
+| `/for-school` | `P-002 For Schools` | `264-1861` | hero + dashboard mockup, trust strip, why-schools, pricing tiers, pilot form |
+| `/for-parent` | `P-003 For Parents` | `264-2389` | hero + daily-report mockup, intro, Essential/Premium plans, support cards, data-control, FAQ accordion |
+| `/for-specialist` | `P-004 For Specialists` | `264-2747` | hero + review-queue mockup, platform roles, two engagement tracks, acceptance criteria, application form |
+
+**Caveat:** all three forms (pilot request, specialist application, document uploads) validate client-side but have **no backend endpoint** — submitting only raises a toast. `/pricing`, `/resources`, `/about` are still placeholders (frames `P-005`, `P-006`, `P-007` exist in Figma).
 
 Auth UI built to Figma: `/login` (frame `Login Page`, node `1-198`) and `/register` role chooser (frame `P-018 Sign Up — Choose Path`, node `186-1103`), plus `/register/:role` and a `/forgot-password` stub. **Caveats:** Google/Microsoft buttons are visual only (no OAuth backend), "Remember me" has no backend effect, `/forgot-password` is a stub, and `/register/:role` reuses the generic register form — the designed multi-step signup frames (`P-019`–`P-023`, parent and specialist equivalents) are not built.
 
