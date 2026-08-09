@@ -4,6 +4,7 @@ import Spinner from './Spinner';
 
 const variants = {
   primary: 'bg-brand-600 text-white hover:bg-brand-700 active:bg-brand-800 shadow-sm',
+  cta: 'bg-cta text-white hover:bg-cta/90 active:bg-cta/95 shadow-sm',
   secondary: 'bg-surface-muted text-content hover:bg-brand-50 border border-border-subtle',
   danger: 'bg-red-600 text-white hover:bg-red-700 active:bg-red-800 shadow-sm',
   outline: 'border border-brand-600 text-brand-700 hover:bg-brand-50',

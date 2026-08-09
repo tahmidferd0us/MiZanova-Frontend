@@ -58,7 +58,7 @@ const RegisterForm = () => {
         {...register('confirmPassword')}
       />
 
-      <Button type="submit" size="lg" fullWidth isLoading={isLoading}>
+      <Button type="submit" variant="cta" size="lg" fullWidth isLoading={isLoading} className="h-12 rounded-lg text-base font-bold">
         Create account
       </Button>
     </form>

@@ -1,5 +1,6 @@
 import { forwardRef, useId, useState } from 'react';
 import { cn } from '@shared/utils/cn';
+import { EyeIcon, EyeOffIcon } from '@shared/components/icons';
 import FormField from './FormField';
 
 export const controlClasses =
@@ -43,9 +44,9 @@ const Input = forwardRef(
               type="button"
               onClick={() => setIsRevealed((value) => !value)}
               aria-label={isRevealed ? 'Hide password' : 'Show password'}
-              className="absolute right-2 rounded-md px-2 py-1 text-xs font-medium text-content-muted hover:text-brand-600"
+              className="absolute right-2 rounded-md p-1.5 text-content-muted transition-colors hover:text-brand-600"
             >
-              {isRevealed ? 'Hide' : 'Show'}
+              {isRevealed ? <EyeOffIcon className="size-5" /> : <EyeIcon className="size-5" />}
             </button>
           ) : (
             rightSlot && <span className="absolute right-3 text-content-muted">{rightSlot}</span>

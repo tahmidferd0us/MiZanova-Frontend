@@ -46,6 +46,94 @@ export const HeartIcon = (props) => (
   </Solid>
 );
 
+export const MailIcon = (props) => (
+  <Outline {...props}>
+    <rect x="3" y="5" width="18" height="14" rx="2" />
+    <path d="m3.5 6.5 8.5 6 8.5-6" />
+  </Outline>
+);
+
+export const LockIcon = (props) => (
+  <Outline {...props}>
+    <rect x="4.5" y="10.5" width="15" height="10" rx="2" />
+    <path d="M8 10.5V7.5a4 4 0 0 1 8 0v3" />
+  </Outline>
+);
+
+export const EyeIcon = (props) => (
+  <Outline {...props}>
+    <path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z" />
+    <circle cx="12" cy="12" r="3" />
+  </Outline>
+);
+
+export const EyeOffIcon = (props) => (
+  <Outline {...props}>
+    <path d="M10.6 6.1A9.9 9.9 0 0 1 12 6c6 0 9.5 6 9.5 6a17 17 0 0 1-3.3 4M6.2 7.9A17 17 0 0 0 2.5 12S6 18 12 18a9.6 9.6 0 0 0 4-.85" />
+    <path d="m9.9 9.9a3 3 0 0 0 4.2 4.2" />
+    <path d="m3 3 18 18" />
+  </Outline>
+);
+
+export const ArrowRightIcon = (props) => (
+  <Outline {...props}>
+    <path d="M4 12h15" />
+    <path d="m13 6 6 6-6 6" />
+  </Outline>
+);
+
+export const GraduationCapIcon = (props) => (
+  <Outline {...props}>
+    <path d="M12 4 2.5 9 12 14l9.5-5L12 4Z" />
+    <path d="M6.5 11.2V16c0 1.4 2.5 2.8 5.5 2.8s5.5-1.4 5.5-2.8v-4.8" />
+    <path d="M21.5 9v5.5" />
+  </Outline>
+);
+
+export const SchoolIcon = (props) => (
+  <Outline {...props}>
+    <path d="M4 20V9.5L12 5l8 4.5V20" />
+    <path d="M3 20h18" />
+    <path d="M10 20v-4.5h4V20" />
+    <path d="M9.5 10.5h1M13.5 10.5h1" />
+  </Outline>
+);
+
+export const UsersIcon = (props) => (
+  <Outline {...props}>
+    <circle cx="9" cy="8.5" r="3" />
+    <path d="M3.5 19.5a5.5 5.5 0 0 1 11 0" />
+    <path d="M16.5 6.2a3 3 0 0 1 0 5.6" />
+    <path d="M18 14.4a5.5 5.5 0 0 1 2.5 4.6" />
+  </Outline>
+);
+
+export const SpecialistIcon = (props) => (
+  <Outline {...props}>
+    <circle cx="12" cy="8" r="3.2" />
+    <path d="M5.5 20a6.5 6.5 0 0 1 13 0" />
+    <path d="M12 3.2V2" />
+  </Outline>
+);
+
+export const GoogleIcon = ({ className = 'size-5', ...props }) => (
+  <svg viewBox="0 0 24 24" aria-hidden="true" className={className} {...props}>
+    <path fill="#4285F4" d="M23.5 12.27c0-.85-.08-1.67-.22-2.45H12v4.63h6.45a5.5 5.5 0 0 1-2.4 3.62v3h3.88c2.27-2.09 3.57-5.17 3.57-8.8Z" />
+    <path fill="#34A853" d="M12 24c3.24 0 5.96-1.08 7.93-2.91l-3.88-3.01c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.76-2.1-6.7-4.94H1.28v3.1A12 12 0 0 0 12 24Z" />
+    <path fill="#FBBC05" d="M5.3 14.3a7.2 7.2 0 0 1 0-4.6v-3.1H1.28a12 12 0 0 0 0 10.8l4.02-3.1Z" />
+    <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.43-3.43C17.95 1.18 15.24 0 12 0A12 12 0 0 0 1.28 6.6l4.02 3.1C6.24 6.85 8.88 4.75 12 4.75Z" />
+  </svg>
+);
+
+export const MicrosoftIcon = ({ className = 'size-5', ...props }) => (
+  <svg viewBox="0 0 24 24" aria-hidden="true" className={className} {...props}>
+    <path fill="#F25022" d="M2 2h9.5v9.5H2Z" />
+    <path fill="#7FBA00" d="M12.5 2H22v9.5h-9.5Z" />
+    <path fill="#00A4EF" d="M2 12.5h9.5V22H2Z" />
+    <path fill="#FFB900" d="M12.5 12.5H22V22h-9.5Z" />
+  </svg>
+);
+
 export const XIcon = (props) => (
   <Solid {...props}>
     <path d="M18.24 2H21.5l-7.1 8.11L22.5 22h-6.53l-5.11-6.68L4.99 22H1.73l7.6-8.68L1.5 2h6.7l4.62 6.11L18.24 2Zm-1.14 18h1.8L7.02 3.9H5.09L17.1 20Z" />

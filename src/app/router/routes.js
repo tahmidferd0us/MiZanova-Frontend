@@ -8,6 +8,8 @@ export const ROUTES = {
   about: '/about',
   login: '/login',
   register: '/register',
+  registerRole: '/register/:role',
+  forgotPassword: '/forgot-password',
   dashboard: '/dashboard',
   notFound: '*',
 };

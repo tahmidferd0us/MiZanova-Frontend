@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { AuthLayout, MainLayout } from '@shared/components/layout';
+import { MainLayout } from '@shared/components/layout';
 import Spinner from '@shared/components/ui/Spinner';
 import GuestRoute from './GuestRoute';
 import ProtectedRoute from './ProtectedRoute';
@@ -15,6 +15,8 @@ const ResourcesPage = lazy(() => import('@modules/marketing/pages/ResourcesPage'
 const AboutPage = lazy(() => import('@modules/marketing/pages/AboutPage'));
 const LoginPage = lazy(() => import('@modules/auth/pages/LoginPage'));
 const RegisterPage = lazy(() => import('@modules/auth/pages/RegisterPage'));
+const RoleSignupPage = lazy(() => import('@modules/auth/pages/RoleSignupPage'));
+const ForgotPasswordPage = lazy(() => import('@modules/auth/pages/ForgotPasswordPage'));
 const DashboardPage = lazy(() => import('@modules/dashboard/pages/DashboardPage'));
 const NotFoundPage = lazy(() => import('@shared/components/feedback/NotFoundPage'));
 
@@ -42,10 +44,10 @@ const AppRouter = () => (
       </Route>
 
       <Route element={<GuestRoute />}>
-        <Route element={<AuthLayout />}>
-          <Route path={ROUTES.login} element={<LoginPage />} />
-          <Route path={ROUTES.register} element={<RegisterPage />} />
-        </Route>
+        <Route path={ROUTES.login} element={<LoginPage />} />
+        <Route path={ROUTES.register} element={<RegisterPage />} />
+        <Route path={ROUTES.registerRole} element={<RoleSignupPage />} />
+        <Route path={ROUTES.forgotPassword} element={<ForgotPasswordPage />} />
       </Route>
     </Routes>
   </Suspense>
