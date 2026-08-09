@@ -1,3 +1,4 @@
+import PageNav from '@shared/components/layout/PageNav';
 import ForSchoolHero from '../components/forSchool/ForSchoolHero';
 import PilotRequestSection from '../components/forSchool/PilotRequestSection';
 import PricingSection from '../components/forSchool/PricingSection';
@@ -11,6 +12,7 @@ const ForSchoolPage = () => (
     <WhySchoolsSection />
     <PricingSection />
     <PilotRequestSection />
+    <PageNav />
   </>
 );
 

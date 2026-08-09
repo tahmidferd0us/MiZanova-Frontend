@@ -75,6 +75,21 @@ export const EyeOffIcon = (props) => (
   </Outline>
 );
 
+export const ArrowLeftIcon = (props) => (
+  <Outline {...props}>
+    <path d="M20 12H5" />
+    <path d="m11 6-6 6 6 6" />
+  </Outline>
+);
+
+export const TrophyIcon = (props) => (
+  <Outline {...props}>
+    <path d="M8 4h8v5a4 4 0 0 1-8 0V4Z" />
+    <path d="M8 5.5H5.5V7a3 3 0 0 0 3 3M16 5.5h2.5V7a3 3 0 0 1-3 3" />
+    <path d="M12 13v3.5M9 20h6l-.5-3.5h-5L9 20Z" />
+  </Outline>
+);
+
 export const ArrowRightIcon = (props) => (
   <Outline {...props}>
     <path d="M4 12h15" />

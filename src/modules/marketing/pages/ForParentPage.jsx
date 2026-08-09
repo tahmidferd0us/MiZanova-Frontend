@@ -1,3 +1,4 @@
+import PageNav from '@shared/components/layout/PageNav';
 import ForParentHero from '../components/forParent/ForParentHero';
 import ParentDataSection from '../components/forParent/ParentDataSection';
 import ParentFaqSection from '../components/forParent/ParentFaqSection';
@@ -13,6 +14,7 @@ const ForParentPage = () => (
     <ParentSupportSection />
     <ParentDataSection />
     <ParentFaqSection />
+    <PageNav />
   </>
 );
 

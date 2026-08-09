@@ -1,3 +1,4 @@
+import PageNav from '@shared/components/layout/PageNav';
 import AcceptanceSection from '../components/forSpecialist/AcceptanceSection';
 import EngagementSection from '../components/forSpecialist/EngagementSection';
 import ForSpecialistHero from '../components/forSpecialist/ForSpecialistHero';
@@ -11,6 +12,7 @@ const ForSpecialistPage = () => (
     <EngagementSection />
     <AcceptanceSection />
     <SpecialistApplySection />
+    <PageNav />
   </>
 );
 

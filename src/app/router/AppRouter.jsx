@@ -4,6 +4,7 @@ import { MainLayout } from '@shared/components/layout';
 import Spinner from '@shared/components/ui/Spinner';
 import GuestRoute from './GuestRoute';
 import ProtectedRoute from './ProtectedRoute';
+import ScrollToTop from './ScrollToTop';
 import { ROUTES } from './routes';
 
 const HomePage = lazy(() => import('@modules/home/pages/HomePage'));
@@ -28,6 +29,7 @@ const Fallback = () => (
 
 const AppRouter = () => (
   <Suspense fallback={<Fallback />}>
+    <ScrollToTop />
     <Routes>
       <Route element={<MainLayout />}>
         <Route path={ROUTES.home} element={<HomePage />} />

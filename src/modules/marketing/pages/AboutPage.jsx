@@ -1,5 +1,21 @@
-import PagePlaceholder from '../components/PagePlaceholder';
+import PageNav from '@shared/components/layout/PageNav';
+import AboutHero from '../components/about/AboutHero';
+import AdvisorySection from '../components/about/AdvisorySection';
+import MissionSection from '../components/about/MissionSection';
+import RecognitionSection from '../components/about/RecognitionSection';
+import TeamSection from '../components/about/TeamSection';
+import ValuesSection from '../components/about/ValuesSection';
 
-const AboutPage = () => <PagePlaceholder eyebrow="About" title="Built with educators, validated by specialists." description="This page is a placeholder. The story, team and compliance content will be designed next." />;
+const AboutPage = () => (
+  <>
+    <AboutHero />
+    <MissionSection />
+    <ValuesSection />
+    <TeamSection />
+    <AdvisorySection />
+    <RecognitionSection />
+    <PageNav />
+  </>
+);
 
 export default AboutPage;

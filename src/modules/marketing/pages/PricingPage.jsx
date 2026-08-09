@@ -1,6 +1,7 @@
 import { useSearchParams } from 'react-router-dom';
 import Accordion from '@shared/components/ui/Accordion';
 import { PARENT_COMPARISON, PRICING_FAQS, SCHOOL_COMPARISON } from '../data/pricingPlans';
+import PageNav from '@shared/components/layout/PageNav';
 import ComparisonTable from '../components/pricing/ComparisonTable';
 import ParentPricing from '../components/pricing/ParentPricing';
 import PricingHeader from '../components/pricing/PricingHeader';
@@ -27,6 +28,8 @@ const PricingPage = () => {
           <Accordion items={PRICING_FAQS} />
         </div>
       </section>
+
+      <PageNav />
     </>
   );
 };
