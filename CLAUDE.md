@@ -6,6 +6,36 @@ The backend lives in a **separate repository** (`MiZanova-Backend`). Never assum
 
 ---
 
+## What you are building
+
+**MiZanova** (Special Miles Pty Ltd) is a neurodiversity-affirming behaviour support platform for schools. A teacher logs a classroom behaviour in under 20 seconds and 3 taps; the system returns up to 3 evidence-based strategies that have been **anonymised and safety-screened** first. Six roles use it: Educator, Parent, Neurodiverse Specialist, School Admin, Platform Admin, Super Admin.
+
+It is a support tool, **not a clinical tool** — output is never diagnostic.
+
+> Older documents, Figma frames and prompts call this product **InsightED**. The name is finalised as **MiZanova**.
+
+### Read before you build
+
+| Doc | When |
+|---|---|
+| [docs/PRODUCT.md](docs/PRODUCT.md) | **Always.** The 12 non-negotiable rules and the two AI safety gates |
+| [docs/REQUIREMENTS.md](docs/REQUIREMENTS.md) | Before starting any feature — FR1–FR26, NFR1–NFR7, plus the open architecture questions |
+| [docs/USER-STORIES.md](docs/USER-STORIES.md) | Before implementing one — acceptance criteria are the definition of done |
+| [docs/FRONTEND-SCOPE.md](docs/FRONTEND-SCOPE.md) | Before adding a module or route — the planned module map and UI-level product rules |
+| [docs/ROADMAP.md](docs/ROADMAP.md) | To see what is actually built vs. not, and the dependency-safe build order |
+
+### The rules that most often bite the frontend
+
+1. **First name only** on parent-facing screens. Never a surname.
+2. **No names in notifications** — secure link only.
+3. **The 3-tap logging budget is hard.** An extra confirm step breaks a requirement.
+4. **Offline is a normal state**, not an error — show Pending / Synced / Conflict.
+5. **Display strategy text verbatim.** The frontend never generates, edits or reorders it — it hasn't passed the safety gate.
+
+Update the status columns in `docs/ROADMAP.md` and `docs/REQUIREMENTS.md` in the same commit that changes the code. `PRODUCT.md`, `REQUIREMENTS.md`, `USER-STORIES.md` and `ROADMAP.md` are duplicated in the backend repo — change both copies.
+
+---
+
 ## Non-negotiable rules
 
 1. **Functional components only.** Arrow function, `const Foo = (props) => (...)`, `export default Foo` at the bottom. No classes anywhere — error boundaries use `react-error-boundary`, not a class.
@@ -171,11 +201,35 @@ Use the semantic tokens, not raw palette values:
 | `accent-50 … accent-700` | Logo green, for secondary emphasis and success accents |
 | `logo-navy`, `logo-teal`, `logo-green` | Exact logo hexes. **Only** for reproducing the logo — never for UI chrome |
 | `surface`, `surface-muted` | Page and raised backgrounds |
+| `canvas` `#f7fafc` | Landing-page background band (the hero section sits on this) |
+| `cta` `#2b6cb0` | The blue conversion band |
+| `ink` `#0f1b2d` | Footer background |
 | `border-subtle` | All borders |
 | `content`, `content-muted` | Primary and secondary text |
 | `rounded-card`, `shadow-soft` | Card geometry |
 | `container-page` | Page gutter + max width (custom `@utility`) |
 | `wordmark` | Navy→teal→green gradient clipped to text (custom `@utility`) |
+
+### Home page — built from Figma
+
+`src/modules/home/` mirrors the Figma "Landing Page" frame (1440×2148). The values below came from the file — keep them if you touch the page:
+
+| Element | Spec |
+|---|---|
+| Page band | `bg-canvas` `#f7fafc` |
+| Hero card | max-w 1280, `rounded-xl` (12px), `bg-brand-600/5`, 24px x-padding, 46px y-padding, 64px column gap, two 584px columns |
+| Hero `h1` | Inter Bold, 48px / 52.8 line-height / -1.2px tracking at 1440 |
+| Features | `bg-surface`, 149px top / 96px bottom padding, three cards |
+| CTA | `bg-cta`, 96px y-padding, 364px tall |
+| Footer | `bg-ink`, 5 columns, 80px padding |
+
+The hero heading uses `clamp()` rather than breakpoint steps so it lands on exactly 48px at 1440 and shrinks with its column — the two-column split only turns on at `xl` (1280) because narrower columns force the heading to 4 lines.
+
+`HeroVisual.jsx` is an inline SVG standing in for the Figma artwork. Replace that one component if you export the real image.
+
+### Icons
+
+`src/shared/components/icons/` holds inline SVGs (`ClockIcon`, `BrainIcon`, `WifiIcon`, `GlobeIcon`, `HeartIcon`, `XIcon`, `LinkedInIcon`, `YouTubeIcon`). There is **no icon library installed** — add new icons here as inline SVG rather than pulling in `lucide-react` without asking.
 
 ### Brand assets
 

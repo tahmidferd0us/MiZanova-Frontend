@@ -2,6 +2,8 @@
 
 React + Vite + Tailwind CSS v4 + Redux Toolkit, organised as a modular monolith.
 
+A neurodiversity-affirming behaviour support platform for schools, by Special Miles Pty Ltd. Product requirements live in [docs/](docs/) — start with [docs/PRODUCT.md](docs/PRODUCT.md).
+
 ## Setup
 
 ```bash
