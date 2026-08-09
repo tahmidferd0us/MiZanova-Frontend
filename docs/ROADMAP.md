@@ -77,10 +77,16 @@ Marketing pages built to Figma:
 | `/for-parent` | `P-003 For Parents` | `264-2389` | hero + daily-report mockup, intro, Essential/Premium plans, support cards, data-control, FAQ accordion |
 | `/for-specialist` | `P-004 For Specialists` | `264-2747` | hero + review-queue mockup, platform roles, two engagement tracks, acceptance criteria, application form |
 | `/pricing` | `P-005 Pricing` + `P-005 Pricing (Parents View)` | `264-3156`, `264-3748` | shared header with a For Schools / For Parents toggle, then per-audience plans, add-ons, comparison table and FAQ |
+| `/resources` | `P-006 Resources` | `264-4241` | search, type filters, sort, 9-card library grid, pager |
+| `/about` | `P-007 About` | `260-3600` | hero, mission, values, team, advisory board, recognition |
+
+Every marketing page ends with `PageNav` (`src/shared/components/layout/PageNav.jsx`), a previous/next pager driven by `src/shared/constants/pageOrder.js`. That file is the single source of page order — add a page there and the pager updates everywhere. `ScrollToTop` in `src/app/router/` resets scroll on route change (and honours `#hash` links), which the bottom-of-page pager depends on.
 
 The pricing page is **one route with two views**, not two routes — the audience toggle syncs to `?audience=parents` so either view is linkable. Plan data, comparison rows and FAQs live in `src/modules/marketing/data/pricingPlans.js`; edit prices there, not in components.
 
-**Caveat:** every form and CTA on these pages (pilot request, specialist application, document uploads, plan-selection buttons) validates client-side but has **no backend endpoint** — submitting only raises a toast. `/resources` and `/about` are still placeholders (frames `P-006`, `P-007` exist in Figma).
+**Caveat:** every form and CTA on these pages (pilot request, specialist application, document uploads, plan-selection buttons) validates client-side but has **no backend endpoint** — submitting only raises a toast. The Resources library is 9 hard-coded items in `data/resources.js` against a claimed 142 results, and all photography (resource thumbnails, team and advisory portraits, the mission illustration) is rendered as gradients or initials because the design assets were not exported.
+
+All seven marketing routes are now built. Nothing in the authenticated product exists yet — see the phases above.
 
 Auth UI built to Figma: `/login` (frame `Login Page`, node `1-198`) and `/register` role chooser (frame `P-018 Sign Up — Choose Path`, node `186-1103`), plus `/register/:role` and a `/forgot-password` stub. **Caveats:** Google/Microsoft buttons are visual only (no OAuth backend), "Remember me" has no backend effect, `/forgot-password` is a stub, and `/register/:role` reuses the generic register form — the designed multi-step signup frames (`P-019`–`P-023`, parent and specialist equivalents) are not built.
 
