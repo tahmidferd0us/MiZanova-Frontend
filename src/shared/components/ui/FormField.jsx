@@ -1,9 +1,9 @@
 import { cn } from '@shared/utils/cn';
 
-const FormField = ({ id, label, error, hint, required = false, className, children }) => (
+const FormField = ({ id, label, error, hint, required = false, className, labelClassName, children }) => (
   <div className={cn('flex w-full flex-col gap-1.5', className)}>
     {label && (
-      <label htmlFor={id} className="text-sm font-medium text-content">
+      <label htmlFor={id} className={cn('text-sm font-medium text-content', labelClassName)}>
         {label}
         {required && <span className="ml-0.5 text-red-600">*</span>}
       </label>

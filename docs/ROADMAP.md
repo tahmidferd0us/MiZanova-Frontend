@@ -69,6 +69,8 @@ Status legend: `Done` · `In progress` · `Not started`
 
 **Frontend** — React + Vite + Tailwind v4 + Redux Toolkit/RTK Query; shared UI kit (Button, Input, NumberInput, Select, Modal, ConfirmModal, Table + Pagination, FileUploader, FileDownloader, Toast, Badge, Card, Spinner); marketing home page built to the Figma `Landing Page` frame (hero, 3 feature cards, CTA band, 5-column footer); placeholder pages for `/for-school`, `/for-parent`, `/for-specialist`, `/pricing`, `/resources`, `/about`; protected `/dashboard` used as the component reference.
 
+Marketing `/for-school` built to Figma frame `P-002 For Schools` (node `264-1861`): hero with a dashboard mockup, trust strip, "Why schools choose", pricing tiers, and a pilot-request form. **Caveat:** the pilot form validates client-side but has no backend endpoint — submitting only raises a toast. `/for-parent`, `/for-specialist`, `/pricing`, `/resources`, `/about` are still placeholders (frames `P-003`, `P-004`, `P-005`, `P-006`, `P-007` exist in Figma).
+
 Auth UI built to Figma: `/login` (frame `Login Page`, node `1-198`) and `/register` role chooser (frame `P-018 Sign Up — Choose Path`, node `186-1103`), plus `/register/:role` and a `/forgot-password` stub. **Caveats:** Google/Microsoft buttons are visual only (no OAuth backend), "Remember me" has no backend effect, `/forgot-password` is a stub, and `/register/:role` reuses the generic register form — the designed multi-step signup frames (`P-019`–`P-023`, parent and specialist equivalents) are not built.
 
 **Nothing in the behaviour-logging, AI, consent, safeguarding, specialist, admin or billing domains has been started.** The product is at the "shell and auth" stage.

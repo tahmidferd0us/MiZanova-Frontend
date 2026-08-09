@@ -1,5 +1,17 @@
-import PagePlaceholder from '../components/PagePlaceholder';
+import ForSchoolHero from '../components/forSchool/ForSchoolHero';
+import PilotRequestSection from '../components/forSchool/PilotRequestSection';
+import PricingSection from '../components/forSchool/PricingSection';
+import TrustStrip from '../components/forSchool/TrustStrip';
+import WhySchoolsSection from '../components/forSchool/WhySchoolsSection';
 
-const ForSchoolPage = () => <PagePlaceholder eyebrow="For School" title="Built for whole-school inclusion." description="This page is a placeholder. The school-facing content and layout will be designed next." />;
+const ForSchoolPage = () => (
+  <>
+    <ForSchoolHero />
+    <TrustStrip />
+    <WhySchoolsSection />
+    <PricingSection />
+    <PilotRequestSection />
+  </>
+);
 
 export default ForSchoolPage;

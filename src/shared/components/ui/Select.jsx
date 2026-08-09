@@ -5,14 +5,14 @@ import { controlClasses } from './Input';
 
 const Select = forwardRef(
   (
-    { id, name, label, error, hint, required, options = [], placeholder = 'Select an option', className, wrapperClassName, ...props },
+    { id, name, label, error, hint, required, options = [], placeholder = 'Select an option', className, wrapperClassName, labelClassName, ...props },
     ref,
   ) => {
     const generatedId = useId();
     const selectId = id ?? name ?? generatedId;
 
     return (
-      <FormField id={selectId} label={label} error={error} hint={hint} required={required} className={wrapperClassName}>
+      <FormField id={selectId} label={label} error={error} hint={hint} required={required} className={wrapperClassName} labelClassName={labelClassName}>
         <select
           ref={ref}
           id={selectId}

@@ -116,6 +116,50 @@ export const SpecialistIcon = (props) => (
   </Outline>
 );
 
+export const ShieldIcon = (props) => (
+  <Outline {...props}>
+    <path d="M12 3.2 5 6v5.5c0 4.2 2.9 7.6 7 9.3 4.1-1.7 7-5.1 7-9.3V6l-7-2.8Z" />
+    <path d="m9.2 12 2 2 3.6-3.8" />
+  </Outline>
+);
+
+export const ShieldDocIcon = (props) => (
+  <Outline {...props}>
+    <path d="M13.5 3.5H7a1.5 1.5 0 0 0-1.5 1.5v14A1.5 1.5 0 0 0 7 20.5h5" />
+    <path d="M13.5 3.5 18 8v3" />
+    <path d="M18.2 13.2 15 14.3v2.4c0 1.7 1.2 3.2 3.2 3.9 2-.7 3.2-2.2 3.2-3.9v-2.4l-3.2-1.1Z" />
+  </Outline>
+);
+
+export const AuditIcon = (props) => (
+  <Outline {...props}>
+    <circle cx="10.5" cy="10.5" r="6.5" />
+    <path d="m15.5 15.5 4.5 4.5" />
+    <path d="M8 12.5v-2M10.5 12.5v-4M13 12.5v-3" />
+  </Outline>
+);
+
+export const TrendingUpIcon = (props) => (
+  <Outline {...props}>
+    <path d="m3.5 16.5 5-5 3.5 3.5 6-6.5" />
+    <path d="M14.5 8.5h4v4" />
+  </Outline>
+);
+
+export const CheckIcon = (props) => (
+  <Outline {...props}>
+    <path d="m5 12.5 4.5 4.5L19 7" />
+  </Outline>
+);
+
+export const InfoIcon = (props) => (
+  <Outline {...props}>
+    <circle cx="12" cy="12" r="9" />
+    <path d="M12 11v5" />
+    <path d="M12 8h.01" />
+  </Outline>
+);
+
 export const GoogleIcon = ({ className = 'size-5', ...props }) => (
   <svg viewBox="0 0 24 24" aria-hidden="true" className={className} {...props}>
     <path fill="#4285F4" d="M23.5 12.27c0-.85-.08-1.67-.22-2.45H12v4.63h6.45a5.5 5.5 0 0 1-2.4 3.62v3h3.88c2.27-2.09 3.57-5.17 3.57-8.8Z" />

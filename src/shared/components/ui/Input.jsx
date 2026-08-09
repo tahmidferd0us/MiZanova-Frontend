@@ -8,7 +8,7 @@ export const controlClasses =
 
 const Input = forwardRef(
   (
-    { id, name, type = 'text', label, error, hint, required, leftIcon, rightSlot, className, wrapperClassName, ...props },
+    { id, name, type = 'text', label, error, hint, required, leftIcon, rightSlot, className, wrapperClassName, labelClassName, ...props },
     ref,
   ) => {
     const generatedId = useId();
@@ -18,7 +18,7 @@ const Input = forwardRef(
     const resolvedType = isPassword && isRevealed ? 'text' : type;
 
     return (
-      <FormField id={inputId} label={label} error={error} hint={hint} required={required} className={wrapperClassName}>
+      <FormField id={inputId} label={label} error={error} hint={hint} required={required} className={wrapperClassName} labelClassName={labelClassName}>
         <div className="relative flex items-center">
           {leftIcon && <span className="pointer-events-none absolute left-3 text-content-muted">{leftIcon}</span>}
           <input
