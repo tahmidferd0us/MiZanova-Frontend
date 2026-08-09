@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
 import { env } from '@app/config/env';
+import { ROUTES } from '@app/router/routes';
 import Logo from './Logo';
 
 const columns = [
-  { title: 'Product', links: [{ label: 'Features', to: '/#features' }, { label: 'Pricing', to: '/#pricing' }, { label: 'Changelog', to: '/#changelog' }] },
-  { title: 'Company', links: [{ label: 'About', to: '/#about' }, { label: 'Careers', to: '/#careers' }, { label: 'Contact', to: '/#contact' }] },
+  { title: 'Audiences', links: [{ label: 'For School', to: ROUTES.forSchool }, { label: 'For Parent', to: ROUTES.forParent }, { label: 'For Specialist', to: ROUTES.forSpecialist }] },
+  { title: 'Company', links: [{ label: 'Pricing', to: ROUTES.pricing }, { label: 'Resources', to: ROUTES.resources }, { label: 'About', to: ROUTES.about }] },
   { title: 'Legal', links: [{ label: 'Privacy', to: '/#privacy' }, { label: 'Terms', to: '/#terms' }, { label: 'Security', to: '/#security' }] },
 ];
 
@@ -13,7 +14,8 @@ const Footer = () => (
     <div className="container-page grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-4">
       <div className="flex flex-col gap-3">
         <Logo />
-        <p className="max-w-xs text-sm text-content-muted">A modular platform for teams that want to ship faster without giving up structure.</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-content-muted">Balance. Discover. Thrive.</p>
+        <p className="max-w-xs text-sm text-content-muted">Neurodiversity-affirming strategies for every learner, built with educators and validated by specialists.</p>
       </div>
 
       {columns.map(({ title, links }) => (

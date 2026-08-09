@@ -1,80 +1,74 @@
-import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ROUTES } from '@app/router/routes';
-import Button from '@shared/components/ui/Button';
+import HeroVisual from './HeroVisual';
 
-const stats = [
-  { value: '99.9%', label: 'Uptime' },
-  { value: '<80ms', label: 'API latency' },
-  { value: '12k+', label: 'Teams onboarded' },
-];
+const trustMarkers = ['🇦🇺 Australian-hosted', 'APP Compliant', 'Non-clinical', 'Evidence-based'];
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 18 },
   visible: (delay = 0) => ({ opacity: 1, y: 0, transition: { duration: 0.5, delay, ease: [0.16, 1, 0.3, 1] } }),
 };
 
 const HeroSection = () => (
-  <section className="relative overflow-hidden">
-    <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_50%_at_50%_0%,var(--color-brand-100),transparent_70%)]" />
+  <section className="bg-brand-50 py-6 sm:py-10 lg:py-14">
+    <div className="container-page">
+      <div className="overflow-hidden rounded-2xl bg-brand-100 px-6 py-12 sm:rounded-3xl sm:px-10 sm:py-16 lg:px-16 lg:py-20">
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+          <div className="flex flex-col items-start gap-6">
+            <motion.span
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              className="inline-flex items-center rounded-full border border-brand-200 bg-surface px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-brand-700"
+            >
+              Neurodiversity Ecosystem
+            </motion.span>
 
-    <div className="container-page flex flex-col items-center gap-8 py-16 text-center sm:py-24 lg:py-28">
-      <motion.span
-        variants={fadeUp}
-        initial="hidden"
-        animate="visible"
-        className="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700"
-      >
-        New · Modular monolith starter
-      </motion.span>
+            <motion.h1
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              custom={0.05}
+              className="text-balance text-[2rem] font-bold leading-[1.08] tracking-tight text-content sm:text-5xl lg:text-[3.4rem]"
+            >
+              <span className="block">Support every learner.</span>
+              <span className="block">Empower every educator.</span>
+            </motion.h1>
 
-      <motion.h1
-        variants={fadeUp}
-        initial="hidden"
-        animate="visible"
-        custom={0.05}
-        className="max-w-3xl text-balance text-4xl font-semibold leading-[1.1] tracking-tight text-content sm:text-5xl lg:text-6xl"
-      >
-        Build your product on a foundation that actually scales
-      </motion.h1>
+            <motion.p
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              custom={0.1}
+              className="max-w-xl text-pretty text-base text-content-muted sm:text-lg"
+            >
+              Neurodiversity-affirming AI strategies in under 20 seconds. Built with educators, validated by specialists, hosted in Australia.
+            </motion.p>
 
-      <motion.p
-        variants={fadeUp}
-        initial="hidden"
-        animate="visible"
-        custom={0.1}
-        className="max-w-2xl text-pretty text-base text-content-muted sm:text-lg"
-      >
-        MiZanova gives you a clean modular architecture, secure authentication and a reusable component system — so your team spends time on features, not plumbing.
-      </motion.p>
-
-      <motion.div variants={fadeUp} initial="hidden" animate="visible" custom={0.15} className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-        <Link to={ROUTES.register} className="sm:w-auto">
-          <Button size="lg" fullWidth>
-            Get started free
-          </Button>
-        </Link>
-        <Link to={ROUTES.login} className="sm:w-auto">
-          <Button size="lg" variant="secondary" fullWidth>
-            Log in
-          </Button>
-        </Link>
-      </motion.div>
-
-      <motion.dl
-        variants={fadeUp}
-        initial="hidden"
-        animate="visible"
-        custom={0.2}
-        className="grid w-full max-w-2xl grid-cols-1 gap-4 pt-6 sm:grid-cols-3"
-      >
-        {stats.map(({ value, label }) => (
-          <div key={label} className="rounded-card border border-border-subtle bg-surface px-4 py-5 shadow-soft">
-            <dt className="text-2xl font-semibold text-content">{value}</dt>
-            <dd className="mt-1 text-sm text-content-muted">{label}</dd>
+            <motion.ul
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              custom={0.15}
+              className="flex flex-wrap items-center gap-x-2.5 gap-y-2 pt-2 text-sm text-content-muted"
+            >
+              {trustMarkers.map((marker) => (
+                <li key={marker} className="flex items-center gap-2.5 after:text-content-muted/40 after:content-['•'] last:after:hidden">
+                  {marker}
+                </li>
+              ))}
+            </motion.ul>
           </div>
-        ))}
-      </motion.dl>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.97 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="overflow-hidden rounded-xl shadow-soft"
+          >
+            <HeroVisual className="block h-auto w-full" />
+          </motion.div>
+        </div>
+      </div>
     </div>
   </section>
 );

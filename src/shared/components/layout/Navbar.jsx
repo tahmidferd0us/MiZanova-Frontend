@@ -8,38 +8,36 @@ import Button from '@shared/components/ui/Button';
 import Logo from './Logo';
 
 const links = [
-  { label: 'Home', to: ROUTES.home },
-  { label: 'Features', to: '/#features' },
-  { label: 'Pricing', to: '/#pricing' },
-  { label: 'Contact', to: '/#contact' },
+  { label: 'For School', to: ROUTES.forSchool },
+  { label: 'For Parent', to: ROUTES.forParent },
+  { label: 'For Specialist', to: ROUTES.forSpecialist },
+  { label: 'Pricing', to: ROUTES.pricing },
+  { label: 'Resources', to: ROUTES.resources },
+  { label: 'About', to: ROUTES.about },
 ];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const { isAuthenticated, user, logout } = useAuth();
   const { pathname } = useLocation();
 
   useEffect(() => setIsOpen(false), [pathname]);
 
-  useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 8);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
   return (
-    <header className={cn('sticky top-0 z-40 w-full border-b border-transparent bg-surface/80 backdrop-blur transition-colors', isScrolled && 'border-border-subtle shadow-sm')}>
-      <nav className="container-page flex h-16 items-center justify-between gap-4" aria-label="Main navigation">
+    <header className="sticky top-0 z-40 w-full border-b border-border-subtle bg-surface/90 backdrop-blur">
+      <nav className="container-page flex h-16 items-center justify-between gap-4 sm:h-20" aria-label="Main navigation">
         <Logo />
 
-        <ul className="hidden items-center gap-1 md:flex">
+        <ul className="hidden items-center gap-1 lg:flex">
           {links.map(({ label, to }) => (
             <li key={label}>
               <NavLink
                 to={to}
                 className={({ isActive }) =>
-                  cn('rounded-lg px-3 py-2 text-sm font-medium text-content-muted transition-colors hover:bg-surface-muted hover:text-content', isActive && to === ROUTES.home && 'text-content')
+                  cn(
+                    'rounded-lg px-3 py-2 text-[15px] text-content-muted transition-colors hover:bg-brand-50 hover:text-brand-700',
+                    isActive && 'font-medium text-brand-700',
+                  )
                 }
               >
                 {label}
@@ -48,7 +46,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div className="hidden items-center gap-2 md:flex">
+        <div className="hidden items-center gap-4 lg:flex">
           {isAuthenticated ? (
             <>
               <span className="max-w-40 truncate text-sm text-content-muted">{user?.fullName ?? user?.email}</span>
@@ -58,13 +56,11 @@ const Navbar = () => {
             </>
           ) : (
             <>
-              <Link to={ROUTES.login}>
-                <Button variant="ghost" size="sm">
-                  Log in
-                </Button>
+              <Link to={ROUTES.login} className="px-1 text-[15px] font-semibold text-brand-600 transition-colors hover:text-brand-700">
+                Login
               </Link>
               <Link to={ROUTES.register}>
-                <Button size="sm">Get started</Button>
+                <Button className="px-5 font-semibold">Get Started</Button>
               </Link>
             </>
           )}
@@ -76,7 +72,7 @@ const Navbar = () => {
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
           aria-label={isOpen ? 'Close menu' : 'Open menu'}
-          className="flex size-11 items-center justify-center rounded-lg text-content transition-colors hover:bg-surface-muted md:hidden"
+          className="flex size-11 items-center justify-center rounded-lg text-content transition-colors hover:bg-surface-muted lg:hidden"
         >
           <span className="flex flex-col gap-1.5">
             <span className={cn('block h-0.5 w-6 bg-current transition-transform', isOpen && 'translate-y-2 rotate-45')} />
@@ -94,12 +90,17 @@ const Navbar = () => {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="overflow-hidden border-t border-border-subtle bg-surface md:hidden"
+            className="overflow-hidden border-t border-border-subtle bg-surface lg:hidden"
           >
             <ul className="container-page flex flex-col gap-1 py-3">
               {links.map(({ label, to }) => (
                 <li key={label}>
-                  <NavLink to={to} className="block rounded-lg px-3 py-3 text-sm font-medium text-content-muted hover:bg-surface-muted hover:text-content">
+                  <NavLink
+                    to={to}
+                    className={({ isActive }) =>
+                      cn('block rounded-lg px-3 py-3 text-[15px] text-content-muted hover:bg-brand-50 hover:text-brand-700', isActive && 'bg-brand-50 font-medium text-brand-700')
+                    }
+                  >
                     {label}
                   </NavLink>
                 </li>
@@ -114,11 +115,11 @@ const Navbar = () => {
                 <>
                   <Link to={ROUTES.login}>
                     <Button variant="secondary" fullWidth>
-                      Log in
+                      Login
                     </Button>
                   </Link>
                   <Link to={ROUTES.register}>
-                    <Button fullWidth>Get started</Button>
+                    <Button fullWidth>Get Started</Button>
                   </Link>
                 </>
               )}

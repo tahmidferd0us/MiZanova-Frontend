@@ -2,10 +2,12 @@ import { Link } from 'react-router-dom';
 import { cn } from '@shared/utils/cn';
 import { env } from '@app/config/env';
 
-const Logo = ({ to = '/', className }) => (
-  <Link to={to} className={cn('inline-flex items-center gap-2 font-semibold tracking-tight text-content', className)}>
-    <span className="flex size-8 items-center justify-center rounded-lg bg-brand-600 text-sm font-bold text-white">M</span>
-    <span className="text-lg">{env.appName}</span>
+const tones = { default: 'wordmark', light: 'text-white' };
+
+const Logo = ({ to = '/', tone = 'default', withWordmark = true, className }) => (
+  <Link to={to} aria-label={env.appName} className={cn('inline-flex items-center gap-2.5', className)}>
+    <img src="/logo-mark.png" alt="" width="256" height="189" className="h-8 w-auto shrink-0 sm:h-9" />
+    {withWordmark && <span className={cn('text-xl font-bold tracking-tight sm:text-2xl', tones[tone])}>{env.appName}</span>}
   </Link>
 );
 

@@ -7,6 +7,12 @@ import ProtectedRoute from './ProtectedRoute';
 import { ROUTES } from './routes';
 
 const HomePage = lazy(() => import('@modules/home/pages/HomePage'));
+const ForSchoolPage = lazy(() => import('@modules/marketing/pages/ForSchoolPage'));
+const ForParentPage = lazy(() => import('@modules/marketing/pages/ForParentPage'));
+const ForSpecialistPage = lazy(() => import('@modules/marketing/pages/ForSpecialistPage'));
+const PricingPage = lazy(() => import('@modules/marketing/pages/PricingPage'));
+const ResourcesPage = lazy(() => import('@modules/marketing/pages/ResourcesPage'));
+const AboutPage = lazy(() => import('@modules/marketing/pages/AboutPage'));
 const LoginPage = lazy(() => import('@modules/auth/pages/LoginPage'));
 const RegisterPage = lazy(() => import('@modules/auth/pages/RegisterPage'));
 const DashboardPage = lazy(() => import('@modules/dashboard/pages/DashboardPage'));
@@ -23,6 +29,12 @@ const AppRouter = () => (
     <Routes>
       <Route element={<MainLayout />}>
         <Route path={ROUTES.home} element={<HomePage />} />
+        <Route path={ROUTES.forSchool} element={<ForSchoolPage />} />
+        <Route path={ROUTES.forParent} element={<ForParentPage />} />
+        <Route path={ROUTES.forSpecialist} element={<ForSpecialistPage />} />
+        <Route path={ROUTES.pricing} element={<PricingPage />} />
+        <Route path={ROUTES.resources} element={<ResourcesPage />} />
+        <Route path={ROUTES.about} element={<AboutPage />} />
         <Route element={<ProtectedRoute />}>
           <Route path={ROUTES.dashboard} element={<DashboardPage />} />
         </Route>

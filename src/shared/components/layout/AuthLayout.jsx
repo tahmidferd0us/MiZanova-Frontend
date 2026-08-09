@@ -6,7 +6,7 @@ const highlights = ['Modular architecture that scales with your team', 'Secure J
 const AuthLayout = () => (
   <div className="grid min-h-dvh lg:grid-cols-2">
     <aside className="relative hidden flex-col justify-between bg-brand-700 p-10 text-white lg:flex">
-      <Logo className="text-white [&_span:last-child]:text-white" />
+      <Logo tone="light" />
       <div className="flex flex-col gap-6">
         <h2 className="text-3xl font-semibold leading-tight">Everything your team needs, in one modular platform.</h2>
         <ul className="flex flex-col gap-3">

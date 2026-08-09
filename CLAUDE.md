@@ -167,12 +167,21 @@ Use the semantic tokens, not raw palette values:
 
 | Token | Use |
 |---|---|
-| `brand-50 … brand-900` | Primary brand ramp |
+| `brand-50 … brand-900` | Primary blue ramp — buttons, links, focus rings |
+| `accent-50 … accent-700` | Logo green, for secondary emphasis and success accents |
+| `logo-navy`, `logo-teal`, `logo-green` | Exact logo hexes. **Only** for reproducing the logo — never for UI chrome |
 | `surface`, `surface-muted` | Page and raised backgrounds |
 | `border-subtle` | All borders |
 | `content`, `content-muted` | Primary and secondary text |
 | `rounded-card`, `shadow-soft` | Card geometry |
 | `container-page` | Page gutter + max width (custom `@utility`) |
+| `wordmark` | Navy→teal→green gradient clipped to text (custom `@utility`) |
+
+### Brand assets
+
+`public/logo-mark.png` (brain mark, transparent), `public/logo-full.png` (full lockup with tagline), `public/favicon.png`. They are extracted from the supplied logo PDF — regenerate them from the source artwork rather than editing the PNGs.
+
+`Logo` renders the mark plus the wordmark. Pass `tone="light"` on dark backgrounds (the gradient wordmark is unreadable there) and `withWordmark={false}` where only the mark fits. The product tagline is **Balance. Discover. Thrive.**
 
 Merge classes with `cn()` from `@shared/utils/cn` so conditional classes override correctly. Never build class strings with template literals.
 

@@ -15,6 +15,8 @@ VITE_API_BASE_URL=http://localhost:5000/api/v1
 VITE_APP_NAME=MiZanova
 ```
 
+Brand assets live in `public/` (`logo-mark.png`, `logo-full.png`, `favicon.png`), extracted from the supplied logo artwork.
+
 ## Run
 
 ```bash
