@@ -76,8 +76,11 @@ Marketing pages built to Figma:
 | `/for-school` | `P-002 For Schools` | `264-1861` | hero + dashboard mockup, trust strip, why-schools, pricing tiers, pilot form |
 | `/for-parent` | `P-003 For Parents` | `264-2389` | hero + daily-report mockup, intro, Essential/Premium plans, support cards, data-control, FAQ accordion |
 | `/for-specialist` | `P-004 For Specialists` | `264-2747` | hero + review-queue mockup, platform roles, two engagement tracks, acceptance criteria, application form |
+| `/pricing` | `P-005 Pricing` + `P-005 Pricing (Parents View)` | `264-3156`, `264-3748` | shared header with a For Schools / For Parents toggle, then per-audience plans, add-ons, comparison table and FAQ |
 
-**Caveat:** all three forms (pilot request, specialist application, document uploads) validate client-side but have **no backend endpoint** — submitting only raises a toast. `/pricing`, `/resources`, `/about` are still placeholders (frames `P-005`, `P-006`, `P-007` exist in Figma).
+The pricing page is **one route with two views**, not two routes — the audience toggle syncs to `?audience=parents` so either view is linkable. Plan data, comparison rows and FAQs live in `src/modules/marketing/data/pricingPlans.js`; edit prices there, not in components.
+
+**Caveat:** every form and CTA on these pages (pilot request, specialist application, document uploads, plan-selection buttons) validates client-side but has **no backend endpoint** — submitting only raises a toast. `/resources` and `/about` are still placeholders (frames `P-006`, `P-007` exist in Figma).
 
 Auth UI built to Figma: `/login` (frame `Login Page`, node `1-198`) and `/register` role chooser (frame `P-018 Sign Up — Choose Path`, node `186-1103`), plus `/register/:role` and a `/forgot-password` stub. **Caveats:** Google/Microsoft buttons are visual only (no OAuth backend), "Remember me" has no backend effect, `/forgot-password` is a stub, and `/register/:role` reuses the generic register form — the designed multi-step signup frames (`P-019`–`P-023`, parent and specialist equivalents) are not built.
 

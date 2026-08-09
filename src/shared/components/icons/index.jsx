@@ -116,6 +116,18 @@ export const SpecialistIcon = (props) => (
   </Outline>
 );
 
+export const PhoneIcon = (props) => (
+  <Outline {...props}>
+    <path d="M6.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 6 6l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5Z" />
+  </Outline>
+);
+
+export const StarIcon = (props) => (
+  <Solid {...props}>
+    <path d="m12 3.5 2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L12 17l-5.3 2.7 1.1-5.9-4.3-4.1 5.9-.8L12 3.5Z" />
+  </Solid>
+);
+
 export const BookIcon = (props) => (
   <Outline {...props}>
     <path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H10a2 2 0 0 1 2 2v13a2 2 0 0 0-2-2H5.5A1.5 1.5 0 0 1 4 15.5v-10Z" />
