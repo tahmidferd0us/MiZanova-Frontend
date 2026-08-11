@@ -62,7 +62,7 @@ Status legend: `Done` · `Partial` · `Not started`
 | FR20 | Adjust **AI confidence thresholds** and toggle feature flags | Not started |
 | FR21 | Global **Kill Switches** to stop AI or data sharing during a crisis | Not started |
 | FR22 | Switch between **Development, Staging, Production** | Not started |
-| NFR6 | Australian student data hosted in **AWS Sydney** | ⚠️ See "Open architecture questions" |
+| NFR6 | Australian student data hosted in **AWS Sydney** | Done — Supabase project `qlenjoceptlezwqtzsjy` runs on AWS **ap-southeast-2 (Sydney)** |
 
 ## 1.7 Global & Cross-Functional
 
@@ -80,7 +80,7 @@ Status legend: `Done` · `Partial` · `Not started`
 
 Genuine conflicts between the requirements and what is currently built. Resolve these with the user before building the affected features.
 
-1. **NFR6 says AWS Sydney; the backend is on Supabase.** Supabase has an ap-southeast-2 (Sydney) region, which likely satisfies data residency — but this needs to be confirmed and the project pinned to that region, or the stack changed. **Do not build student-data features until this is settled.**
+1. ~~**NFR6 says AWS Sydney; the backend is on Supabase.**~~ **Resolved.** The live project (`qlenjoceptlezwqtzsjy`, org MiZanova) is hosted on AWS **ap-southeast-2 (Sydney)**, verified from the dashboard and by connecting. Australian data residency is satisfied, and student-data persistence is no longer blocked on this. Note the project is on the **Free plan** — free projects pause after inactivity and have no point-in-time recovery, so it is not suitable for real student data as-is.
 2. **NFR1 (AI under 3s) has no AI provider chosen.** No model, prompt layer, or Judge-LLM exists yet.
 3. **NFR2 / E03 require a PWA with encrypted local storage.** Vite is not configured as a PWA and no offline store exists. This affects frontend architecture significantly — decide before building the logging UI.
 4. **FR6/FR7/FR19 require Stripe.** No Stripe integration or subscription model exists.

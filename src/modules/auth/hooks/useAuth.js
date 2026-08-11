@@ -1,3 +1,4 @@
+import { baseApi } from '@app/api/baseApi';
 import { useAppDispatch, useAppSelector } from '@app/store/hooks';
 import { useLogoutMutation } from '../api/authApi';
 import { selectAuthUser, selectIsAuthenticated, selectIsBootstrapping, sessionCleared } from '../store/authSlice';
@@ -7,8 +8,9 @@ export const useAuth = () => {
   const [logoutRequest, { isLoading: isLoggingOut }] = useLogoutMutation();
 
   const logout = async () => {
-    await logoutRequest().unwrap().catch(() => null);
     dispatch(sessionCleared());
+    dispatch(baseApi.util.resetApiState());
+    await logoutRequest().unwrap().catch(() => null);
   };
 
   return {

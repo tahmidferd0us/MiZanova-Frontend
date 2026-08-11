@@ -67,6 +67,8 @@ Status legend: `Done` · `In progress` · `Not started`
 
 **Backend** — Express modular monolith; `auth` module (register, login, refresh, logout, me, change-password); Prisma schema with `User` and `RefreshToken`; zod validation; typed error handling; rate limiting; Supabase Postgres as the database.
 
+**The database is live.** Project `qlenjoceptlezwqtzsjy` (org MiZanova, AWS ap-southeast-2). Migration `20260810000000_init` is applied — `users` and `refresh_tokens` exist — and the admin user is seeded. Full auth verified end to end against it: register, login, `/me`, refresh with rotation, logout with server-side revocation, 401 on bad credentials, 409 on duplicate email. `DATABASE_URL` uses the Supavisor transaction pooler (6543); `DIRECT_URL` uses the session pooler (5432) for migrations — **not** `db.<ref>.supabase.co`, which is IPv6-only.
+
 **Frontend** — React + Vite + Tailwind v4 + Redux Toolkit/RTK Query; shared UI kit (Button, Input, NumberInput, Select, Modal, ConfirmModal, Table + Pagination, FileUploader, FileDownloader, Toast, Badge, Card, Spinner); marketing home page built to the Figma `Landing Page` frame (hero, 3 feature cards, CTA band, 5-column footer); placeholder pages for `/for-school`, `/for-parent`, `/for-specialist`, `/pricing`, `/resources`, `/about`; protected `/dashboard` used as the component reference.
 
 Marketing pages built to Figma:
